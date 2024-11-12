@@ -2,21 +2,22 @@ title: Min Myat Oo
 subtitle: My Personal Blog
 name: Min Myat Oo
 description: >- # this means to ignore newlines until "baseurl:"
-  Welcome to my personal blog where I share my thoughts on technology,
-  software development, and my journey as a developer.
+  Software Engineer specializing in NetSuite development, ERP systems,
+  and enterprise solutions. Sharing insights on software architecture,
+  cloud computing, and business automation.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://minmyatoo.github.io"
 repository: minmyatoo/minmyatoo.github.io
-
+locale: "en-US"
 # Build settings
 remote_theme: "mmistakes/minimal-mistakes@4.24.0"
-minimal_mistakes_skin: "dark" # "default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin: "mint" # "default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Author
 author:
   name: "Min Myat Oo"
   avatar: "/assets/images/bio-photo.jpg" # Replace with your photo
-  bio: "Full Stack Developer | NetSuite Specialist"
+  bio: "NetSuite Specialist"
   location: "Singapore"
   links:
     - label: "GitHub"
@@ -38,6 +39,25 @@ plugins:
   - jekyll-feed
   - jemoji
   - jekyll-include-cache
+  - jekyll-archives
+
+# Archives
+category_archive:
+  type: jekyll-archives
+  path: /categories/
+tag_archive:
+  type: jekyll-archives
+  path: /tags/
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+  layouts:
+    category: archive-taxonomy
+    tag: archive-taxonomy
+  permalinks:
+    category: /categories/:name/
+    tag: /tags/:name/
 
 # Defaults
 defaults:
@@ -52,7 +72,10 @@ defaults:
       comments: true
       share: true
       related: true
- # _pages
+      toc: true
+      toc_sticky: true
+      show_date: true
+  # _pages
   - scope:
       path: "_pages"
       type: pages
@@ -67,13 +90,20 @@ navigation:
       url: /about/
     - title: "Posts"
       url: /posts/
+    - title: "Categories"
+      url: /categories/
+    - title: "Tags"
+      url: /tags/
 
 # Pagination
-paginate: 5
+paginate: 7
 paginate_path: /page:num/
+
 
 # Search
 search: true
+search_full_content: true
+search_provider: lunr
 
 # Analytics (optional - add if you want analytics)
 # analytics:

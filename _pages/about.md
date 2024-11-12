@@ -1,6 +1,8 @@
 ---
 title: "About Me"
 permalink: /about/
+layout: single
+author_profile: true
 ---
 
 # About Min Myat Oo
@@ -44,3 +46,5 @@ Feel free to reach out for collaborations or discussions:
 - LinkedIn: https://www.linkedin.com/in/minmyatoo
 
 I'm always interested in connecting with fellow developers and sharing knowledge about NetSuite development and software engineering.
+
+_"The best code is no code at all." - Jeff Atwood_
