@@ -1,0 +1,75 @@
+title: Min Myat Oo
+subtitle: My Personal Blog
+name: Min Myat Oo
+description: >- # this means to ignore newlines until "baseurl:"
+  Welcome to my personal blog where I share my thoughts on technology,
+  software development, and my journey as a developer.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://minmyatoo.github.io"
+repository: minmyatoo/minmyatoo.github.io
+
+# Build settings
+remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+minimal_mistakes_skin: "dark" # "default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+
+# Site Author
+author:
+  name: "Min Myat Oo"
+  avatar: "/assets/images/bio-photo.jpg" # Replace with your photo
+  bio: "Software Developer | Tech Enthusiast"
+  location: "Your Location"
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/minmyatoo"
+
+# Site Footer
+footer:
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/minmyatoo"
+
+# Plugins
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jemoji
+  - jekyll-include-cache
+
+# Defaults
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true
+  # _pages
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+
+# Pagination
+paginate: 5
+paginate_path: /page:num/
+
+# Search
+search: true
+
+# Analytics (optional - add if you want analytics)
+# analytics:
+#   provider: "google-gtag"
+#   google:
+#     tracking_id: "UA-XXXXXXXXX-X"
+#     anonymize_ip: false
