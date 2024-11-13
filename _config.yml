@@ -1,57 +1,62 @@
-# Site Settings
+# Core Site Settings
 title: Min Myat Oo
 subtitle: My Personal Blog
 name: Min Myat Oo
 description: >- 
-  Software Engineer specializing in NetSuite development, ERP systems,
-  and enterprise solutions. Sharing insights on software architecture,
-  cloud computing, and business automation.
+  Senior Software Engineer specializing in NetSuite development, ERP systems,
+  and enterprise solutions. Sharing deep insights on software architecture,
+  cloud computing, business automation, and modern development practices.
 baseurl: "" 
 url: "https://minmyatoo.github.io"
 repository: minmyatoo/minmyatoo.github.io
 locale: "en-US"
-logo: "/assets/images/logo.png"  # Add a custom logo
-og_image: "/assets/images/site-logo.png"  # Open Graph default image
+logo: "/assets/images/logo.png"
+og_image: "/assets/images/site-logo.png"
+timezone: Asia/Singapore  # Set to your local timezone
 
-# Theme Settings
+# Theme Configuration
 remote_theme: "mmistakes/minimal-mistakes@4.24.0"
 minimal_mistakes_skin: "dark"
+minimal_mistakes_skin_dark: "dark"  # For dark mode support
+minimal_mistakes_skin_light: "default"  # For light mode support
 search: true
 search_full_content: true
-search_provider: lunr
-lunr:
-  search_within_pages: true
+search_provider: algolia  # Upgraded from lunr for better performance
+algolia:
+  application_id: # your application ID
+  index_name: # your index name
+  search_only_api_key: # your search only API key
+  powered_by: true
+  files_to_exclude:
+    - _posts/drafts/*.md
+    - _pages/thanks.md
+    - _pages/404.md
 
-# Enhanced Site Author
+# Enhanced Author Configuration
 author:
   name: "Min Myat Oo"
   avatar: "/assets/images/bio-photo.jpg"
-  bio: "NetSuite Specialist | Cloud Solutions Architect"
+  bio: "NetSuite Specialist | Cloud Solutions Architect | Technical Writer"
   location: "Singapore"
-  email: # Add your email if you want to display it
+  email: 
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/minmyatoo"
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
-      url: # Add your LinkedIn URL
+      url: 
     - label: "Stack Overflow"
       icon: "fab fa-fw fa-stack-overflow"
-      url: # Add your Stack Overflow URL
+      url: 
+    - label: "Dev.to"
+      icon: "fab fa-fw fa-dev"
+      url: 
+    - label: "Medium"
+      icon: "fab fa-fw fa-medium"
+      url: 
 
-# Site Footer Enhancement
-footer:
-  links:
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/minmyatoo"
-    - label: "LinkedIn"
-      icon: "fab fa-fw fa-linkedin"
-      url: # Add your LinkedIn URL
-  copyright: "© 2024 Min Myat Oo. Powered by [Jekyll](https://jekyllrb.com) & [Minimal Mistakes](https://mademistakes.com/work/minimal-mistakes-jekyll-theme/)."
-
-# Enhanced Navigation
+# Extended Navigation
 main:
   - title: "Home"
     url: /
@@ -65,76 +70,97 @@ main:
     url: /tags/
   - title: "Portfolio"
     url: /portfolio/
+  - title: "Resources"
+    url: /resources/
   - title: "Contact"
     url: /contact/
 
-# UI Enhancements
-atom_feed:
-  path: # blank to disable feed icon
-  hide: true  # Completely hide the feed icon
+# Enhanced Footer Configuration
+footer:
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/minmyatoo"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: 
+    - label: "RSS Feed"
+      icon: "fas fa-fw fa-rss"
+      url: "/feed.xml"
+  copyright: |
+    © 2024 Min Myat Oo. Built with 
+    [Jekyll](https://jekyllrb.com) & 
+    [Minimal Mistakes](https://mademistakes.com/work/minimal-mistakes-jekyll-theme/).
+    [Privacy Policy](/privacy/) | [Terms](/terms/)
 
-# Reading Experience
+# Content Enhancement Settings
 reading_time: true
 words_per_minute: 200
-post_pagination: true
+post_pagination: numbered  # Changed from true/false to numbered for better navigation
 related: true
+related_posts_limit: 4
 
-# Comments System
+# Advanced Comments System
 comments:
-  provider: "disqus"
-  disqus:
-    shortname: # Add your disqus shortname
+  provider: "giscus"  # Changed from disqus to giscus for GitHub Discussions integration
+  giscus:
+    repo_id: # your repository ID
+    category_name: "Comments"
+    mapping: "pathname"
+    reactions_enabled: "1"
+    theme: "dark_dimmed"
+    crossorigin: "anonymous"
 
-# Analytics Enhancement
+# Enhanced Analytics
 analytics:
   provider: "google-gtag"
   google:
-    tracking_id: # Add your Google Analytics tracking ID
+    tracking_id: 
     anonymize_ip: true
+    optimize_id:  # For A/B testing
+  plausible:
+    domain:  # Optional Plausible Analytics support
 
-# Social Sharing
+# Extended Social Sharing
 social_share: true
 social_platforms:
   twitter: true
   facebook: true
   linkedin: true
   reddit: true
+  hackernews: true
+  email: true
 
-# SEO Enhancements
+# Advanced SEO Configuration
 twitter:
-  username: # Add your Twitter username
+  username: 
+  card: summary_large_image
 social:
   type: Person
   name: "Min Myat Oo"
   links:
     - "https://github.com/minmyatoo"
-    # Add other social profile links
+    - "https://linkedin.com/in/"
+og_default_image: "/assets/images/site-logo.png"
+schema:
+  type: Person
+  name: Min Myat Oo
+  url: "https://minmyatoo.github.io"
+  sameAs:
+    - "https://github.com/minmyatoo"
 
-# Archive Settings
+# Enhanced Archive Settings
 category_archive:
-  type: jekyll-archives
+  type: liquid
   path: /categories/
 tag_archive:
-  type: jekyll-archives
+  type: liquid
   path: /tags/
-jekyll-archives:
-  enabled:
-    - categories
-    - tags
-    - year
-    - month
-  layouts:
-    category: archive-taxonomy
-    tag: archive-taxonomy
-    year: archive-taxonomy
-    month: archive-taxonomy
-  permalinks:
-    year: '/:year/'
-    month: '/:year/:month/'
-    category: /categories/:name/
-    tag: /tags/:name/
+year_archive:
+  type: liquid
+  path: /year/
 
-# Enhanced Defaults
+# Advanced Defaults
 defaults:
   # _posts
   - scope:
@@ -154,6 +180,9 @@ defaults:
       header:
         overlay_filter: 0.5
         show_overlay_excerpt: true
+      sidebar:
+        nav: "docs"
+      excerpt_separator: "<!--more-->"
   # _pages
   - scope:
       path: "_pages"
@@ -162,6 +191,8 @@ defaults:
       layout: single
       author_profile: true
       classes: wide
+      sidebar:
+        nav: "docs"
   # _portfolio
   - scope:
       path: "_portfolio"
@@ -170,8 +201,21 @@ defaults:
       layout: single
       author_profile: false
       share: true
+      related: true
+  # _docs
+  - scope:
+      path: "_docs"
+      type: docs
+    values:
+      layout: single
+      read_time: false
+      author_profile: false
+      share: false
+      comments: false
+      sidebar:
+        nav: "docs"
 
-# Additional Plugin Configuration
+# Extended Plugin Configuration
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
@@ -179,20 +223,37 @@ plugins:
   - jekyll-feed
   - jemoji
   - jekyll-include-cache
-  - jekyll-archives
   - jekyll-seo-tag
   - jekyll-redirect-from
+  - jekyll-mentions
+  - jekyll-last-modified-at
 
-# Pagination Enhancement
-paginate: 7
+# Enhanced Pagination
+paginate: 10
 paginate_path: /page:num/
 
-# Performance Settings
+# Performance Optimization
 sass:
   style: compressed
+  sourcemap: never
 compress_html:
   clippings: all
   comments: all
   endings: all
   blanklines: false
   profile: false
+  ignore:
+    envs: development
+
+# Cache Settings
+regenerate: false
+incremental: true
+
+# Security Headers
+webrick:
+  headers:
+    Content-Security-Policy: "default-src 'self'"
+    X-Frame-Options: DENY
+    X-Content-Type-Options: nosniff
+    Referrer-Policy: strict-origin-when-cross-origin
+    Permissions-Policy: "geolocation=(), microphone=(), camera=()"
