@@ -50,6 +50,7 @@ NetSuite သည် Oracle Corporation မှ ပိုင်ဆိုင်သ�
    - Business process flows များကို customize လုပ်နိုင်ခြင်း
 
 3. **Integration Capabilities**
+
    - Third-party applications များနှင့် ချိတ်ဆက်နိုင်ခြင်း
    - APIs များဖြင့် ပေါင်းစပ်အသုံးပြုနိုင်ခြင်း
    - Data import/export လွယ်ကူခြင်း
@@ -252,6 +253,7 @@ require(["N/search"], function (search) {
    - Promises နှင့် Async/Await
 
 2. **Web Technologies**
+
    - HTML/CSS
    - RESTful APIs
    - JSON
@@ -267,6 +269,7 @@ require(["N/search"], function (search) {
    - Workflows
 
 2. **SuiteScript Basics**
+
    - Script Types
    - NetSuite APIs
    - Debugging Tools
@@ -282,6 +285,7 @@ require(["N/search"], function (search) {
    - Security Best Practices
 
 2. **Integration Technologies**
+
    - RESTlets
    - SuiteTalk Web Services
    - Token-based Authentication
@@ -428,7 +432,3 @@ define(["N/search", "N/record", "N/email"], function (search, record, email) {
 - Udemy
 - LinkedIn Learning
 - SuiteTraining
-
-## နိဂုံး
-
-NetSuite Developer တစ်ယောက်ဖြစ်ရန် JavaScript နှင့် NetSuite Platform ကို ကောင်းစွာနားလည်ရန် လိုအပ်ပါသည်။ စနစ်တကျလေ့လာခြင်းဖြင့် အခွင့်အလမ်းကောင်းများစွာရရှိနိုင်ပါသည်။ NetSuite သည် Cloud ERP market တွင် ဦးဆောင်နေသော platform တစ်ခုဖြစ်သည့်အတွက် Developer များအတွက်
