@@ -1,81 +1,74 @@
-# Core Site Settings
+# Site Settings
 title: Min Myat Oo
-subtitle: My Personal Blog
+subtitle: "Software Engineering & Cloud Solutions"
 name: Min Myat Oo
 description: >- 
-  Senior Software Engineer specializing in NetSuite development, ERP systems,
-  and enterprise solutions. Sharing deep insights on software architecture,
-  cloud computing, business automation, and modern development practices.
-baseurl: "" 
-url: "https://minmyatoo.github.io"
-repository: minmyatoo/minmyatoo.github.io
+  Experienced Software Engineer specializing in NetSuite development,
+  cloud architecture, and enterprise solutions. Sharing insights on
+  modern development practices and business automation.
 locale: "en-US"
-logo: "/assets/images/logo.png"
-og_image: "/assets/images/site-logo.png"
-timezone: Asia/Singapore  # Set to your local timezone
+masthead_title: "Min Myat Oo"
 
-# Theme Configuration
+# Theme Settings
 remote_theme: "mmistakes/minimal-mistakes@4.24.0"
 minimal_mistakes_skin: "dark"
-minimal_mistakes_skin_dark: "dark"  # For dark mode support
-minimal_mistakes_skin_light: "default"  # For light mode support
+breadcrumbs: true
+words_per_minute: 200
 search: true
 search_full_content: true
-search_provider: algolia  # Upgraded from lunr for better performance
-algolia:
-  application_id: # your application ID
-  index_name: # your index name
-  search_only_api_key: # your search only API key
-  powered_by: true
-  files_to_exclude:
-    - _posts/drafts/*.md
-    - _pages/thanks.md
-    - _pages/404.md
+search_provider: lunr
+lunr:
+  search_within_pages: true
 
-# Enhanced Author Configuration
+# Layout Settings
+teaser: /assets/images/default-teaser.jpg
+excerpt_separator: "<!--more-->"
+classes:
+  - wide
+  - dark-theme
+
+# Author Settings
 author:
   name: "Min Myat Oo"
-  avatar: "/assets/images/bio-photo.jpg"
-  bio: "NetSuite Specialist | Cloud Solutions Architect | Technical Writer"
+  avatar: "/assets/images/profile.jpg"
+  bio: |
+    🚀 NetSuite Solutions Architect
+    💻 Full Stack Developer
+    ☁️ Cloud Architecture Specialist
   location: "Singapore"
-  email: 
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/minmyatoo"
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
-      url: 
+      url: "#"
     - label: "Stack Overflow"
       icon: "fab fa-fw fa-stack-overflow"
-      url: 
-    - label: "Dev.to"
-      icon: "fab fa-fw fa-dev"
-      url: 
-    - label: "Medium"
-      icon: "fab fa-fw fa-medium"
-      url: 
+      url: "#"
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope"
+      url: "mailto:your.email@domain.com"
 
-# Extended Navigation
+# Navigation
 main:
-  - title: "Home"
-    url: /
   - title: "About"
     url: /about/
+    description: "Learn more about my journey and expertise"
   - title: "Blog"
     url: /posts/
-  - title: "Categories"
-    url: /categories/
-  - title: "Tags"
-    url: /tags/
-  - title: "Portfolio"
-    url: /portfolio/
-  - title: "Resources"
-    url: /resources/
+    description: "Technical articles and insights"
+  - title: "Projects"
+    url: /projects/
+    description: "Featured work and case studies"
+  - title: "Skills"
+    url: /skills/
+    description: "Technical expertise and capabilities"
   - title: "Contact"
     url: /contact/
+    description: "Get in touch"
 
-# Enhanced Footer Configuration
+# Footer Configuration
 footer:
   links:
     - label: "GitHub"
@@ -83,84 +76,19 @@ footer:
       url: "https://github.com/minmyatoo"
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
-      url: 
-    - label: "RSS Feed"
-      icon: "fas fa-fw fa-rss"
-      url: "/feed.xml"
-  copyright: |
-    © 2024 Min Myat Oo. Built with 
-    [Jekyll](https://jekyllrb.com) & 
-    [Minimal Mistakes](https://mademistakes.com/work/minimal-mistakes-jekyll-theme/).
-    [Privacy Policy](/privacy/) | [Terms](/terms/)
+      url: "#"
+  copyright: "© 2024 Min Myat Oo · Built with Jekyll & ❤️"
 
-# Content Enhancement Settings
-reading_time: true
-words_per_minute: 200
-post_pagination: numbered  # Changed from true/false to numbered for better navigation
-related: true
-related_posts_limit: 4
+# Collections
+collections:
+  projects:
+    output: true
+    permalink: /:collection/:path/
+  skills:
+    output: true
+    permalink: /:collection/:path/
 
-# Advanced Comments System
-comments:
-  provider: "giscus"  # Changed from disqus to giscus for GitHub Discussions integration
-  giscus:
-    repo_id: # your repository ID
-    category_name: "Comments"
-    mapping: "pathname"
-    reactions_enabled: "1"
-    theme: "dark_dimmed"
-    crossorigin: "anonymous"
-
-# Enhanced Analytics
-analytics:
-  provider: "google-gtag"
-  google:
-    tracking_id: 
-    anonymize_ip: true
-    optimize_id:  # For A/B testing
-  plausible:
-    domain:  # Optional Plausible Analytics support
-
-# Extended Social Sharing
-social_share: true
-social_platforms:
-  twitter: true
-  facebook: true
-  linkedin: true
-  reddit: true
-  hackernews: true
-  email: true
-
-# Advanced SEO Configuration
-twitter:
-  username: 
-  card: summary_large_image
-social:
-  type: Person
-  name: "Min Myat Oo"
-  links:
-    - "https://github.com/minmyatoo"
-    - "https://linkedin.com/in/"
-og_default_image: "/assets/images/site-logo.png"
-schema:
-  type: Person
-  name: Min Myat Oo
-  url: "https://minmyatoo.github.io"
-  sameAs:
-    - "https://github.com/minmyatoo"
-
-# Enhanced Archive Settings
-category_archive:
-  type: liquid
-  path: /categories/
-tag_archive:
-  type: liquid
-  path: /tags/
-year_archive:
-  type: liquid
-  path: /year/
-
-# Advanced Defaults
+# Defaults
 defaults:
   # _posts
   - scope:
@@ -176,13 +104,11 @@ defaults:
       toc: true
       toc_sticky: true
       show_date: true
-      classes: wide
       header:
         overlay_filter: 0.5
         show_overlay_excerpt: true
       sidebar:
-        nav: "docs"
-      excerpt_separator: "<!--more-->"
+        nav: "recent-posts"
   # _pages
   - scope:
       path: "_pages"
@@ -191,31 +117,56 @@ defaults:
       layout: single
       author_profile: true
       classes: wide
-      sidebar:
-        nav: "docs"
-  # _portfolio
+  # _projects
   - scope:
-      path: "_portfolio"
-      type: portfolio
+      path: "_projects"
+      type: projects
     values:
       layout: single
       author_profile: false
       share: true
       related: true
-  # _docs
+      sidebar:
+        nav: "projects"
+  # _skills
   - scope:
-      path: "_docs"
-      type: docs
+      path: "_skills"
+      type: skills
     values:
       layout: single
-      read_time: false
+      classes: wide
       author_profile: false
       share: false
-      comments: false
-      sidebar:
-        nav: "docs"
 
-# Extended Plugin Configuration
+# Comments
+comments:
+  provider: "giscus"
+  giscus:
+    repo_id: # your repo ID
+    category_name: "Comments"
+    category_id: # your category ID
+    discussion_term: "pathname"
+    reactions_enabled: 1
+    theme: "dark_dimmed"
+
+# Analytics
+analytics:
+  provider: "google-gtag"
+  google:
+    tracking_id: # your tracking ID
+    anonymize_ip: true
+
+# SEO Settings
+twitter:
+  username: # your Twitter username
+social:
+  type: Person
+  name: "Min Myat Oo"
+  links:
+    - "https://github.com/minmyatoo"
+    - "https://linkedin.com/in/minmyatoo"
+
+# Plugin Settings
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
@@ -224,36 +175,24 @@ plugins:
   - jemoji
   - jekyll-include-cache
   - jekyll-seo-tag
-  - jekyll-redirect-from
-  - jekyll-mentions
-  - jekyll-last-modified-at
+  - jekyll-archives
 
-# Enhanced Pagination
-paginate: 10
+# Archive Settings
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
+
+# Pagination
+paginate: 9
 paginate_path: /page:num/
 
-# Performance Optimization
+# Optimization
 sass:
   style: compressed
-  sourcemap: never
 compress_html:
   clippings: all
-  comments: all
-  endings: all
-  blanklines: false
-  profile: false
   ignore:
     envs: development
-
-# Cache Settings
-regenerate: false
-incremental: true
-
-# Security Headers
-webrick:
-  headers:
-    Content-Security-Policy: "default-src 'self'"
-    X-Frame-Options: DENY
-    X-Content-Type-Options: nosniff
-    Referrer-Policy: strict-origin-when-cross-origin
-    Permissions-Policy: "geolocation=(), microphone=(), camera=()"
