@@ -1,46 +1,76 @@
 # Site Settings
 title: Min Myat Oo
-subtitle: My Personal Blog
+subtitle: "Software Engineering & Cloud Solutions"
 name: Min Myat Oo
 description: >- 
-  Software Engineer specializing in NetSuite development, ERP systems,
-  and enterprise solutions. Sharing insights on software architecture,
-  cloud computing, and business automation.
-baseurl: "" 
-url: "https://minmyatoo.github.io"
-repository: minmyatoo/minmyatoo.github.io
+  Experienced Software Engineer specializing in NetSuite development,
+  cloud architecture, and enterprise solutions. Sharing insights on
+  modern development practices and business automation.
 locale: "en-US"
-logo: "/assets/images/logo.png"  # Add a custom logo
-og_image: "/assets/images/site-logo.png"  # Open Graph default image
+logo: "/assets/images/logo.png"
+og_image: "/assets/images/site-banner.png"
+masthead_title: "Min Myat Oo"
 
 # Theme Settings
 remote_theme: "mmistakes/minimal-mistakes@4.24.0"
 minimal_mistakes_skin: "dark"
+breadcrumbs: true
+words_per_minute: 200
 search: true
 search_full_content: true
 search_provider: lunr
 lunr:
   search_within_pages: true
 
-# Enhanced Site Author
+# Layout Settings
+teaser: /assets/images/default-teaser.jpg
+excerpt_separator: "<!--more-->"
+classes:
+  - wide
+  - dark-theme
+
+# Author Settings
 author:
   name: "Min Myat Oo"
-  avatar: "/assets/images/bio-photo.jpg"
-  bio: "NetSuite Specialist | Cloud Solutions Architect"
+  avatar: "/assets/images/profile.jpg"
+  bio: |
+    🚀 NetSuite Solutions Architect
+    💻 Full Stack Developer
+    ☁️ Cloud Architecture Specialist
   location: "Singapore"
-  email: # Add your email if you want to display it
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/minmyatoo"
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
-      url: # Add your LinkedIn URL
+      url: "#"
     - label: "Stack Overflow"
       icon: "fab fa-fw fa-stack-overflow"
-      url: # Add your Stack Overflow URL
+      url: "#"
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope"
+      url: "mailto:your.email@domain.com"
 
-# Site Footer Enhancement
+# Navigation
+main:
+  - title: "About"
+    url: /about/
+    description: "Learn more about my journey and expertise"
+  - title: "Blog"
+    url: /posts/
+    description: "Technical articles and insights"
+  - title: "Projects"
+    url: /projects/
+    description: "Featured work and case studies"
+  - title: "Skills"
+    url: /skills/
+    description: "Technical expertise and capabilities"
+  - title: "Contact"
+    url: /contact/
+    description: "Get in touch"
+
+# Footer Configuration
 footer:
   links:
     - label: "GitHub"
@@ -48,93 +78,19 @@ footer:
       url: "https://github.com/minmyatoo"
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
-      url: # Add your LinkedIn URL
-  copyright: "© 2024 Min Myat Oo. Powered by [Jekyll](https://jekyllrb.com) & [Minimal Mistakes](https://mademistakes.com/work/minimal-mistakes-jekyll-theme/)."
+      url: "#"
+  copyright: "© 2024 Min Myat Oo · Built with Jekyll & ❤️"
 
-# Enhanced Navigation
-main:
-  - title: "Home"
-    url: /
-  - title: "About"
-    url: /about/
-  - title: "Blog"
-    url: /posts/
-  - title: "Categories"
-    url: /categories/
-  - title: "Tags"
-    url: /tags/
-  - title: "Portfolio"
-    url: /portfolio/
-  - title: "Contact"
-    url: /contact/
+# Collections
+collections:
+  projects:
+    output: true
+    permalink: /:collection/:path/
+  skills:
+    output: true
+    permalink: /:collection/:path/
 
-# UI Enhancements
-atom_feed:
-  path: # blank to disable feed icon
-  hide: true  # Completely hide the feed icon
-
-# Reading Experience
-reading_time: true
-words_per_minute: 200
-post_pagination: true
-related: true
-
-# Comments System
-comments:
-  provider: "disqus"
-  disqus:
-    shortname: # Add your disqus shortname
-
-# Analytics Enhancement
-analytics:
-  provider: "google-gtag"
-  google:
-    tracking_id: # Add your Google Analytics tracking ID
-    anonymize_ip: true
-
-# Social Sharing
-social_share: true
-social_platforms:
-  twitter: true
-  facebook: true
-  linkedin: true
-  reddit: true
-
-# SEO Enhancements
-twitter:
-  username: # Add your Twitter username
-social:
-  type: Person
-  name: "Min Myat Oo"
-  links:
-    - "https://github.com/minmyatoo"
-    # Add other social profile links
-
-# Archive Settings
-category_archive:
-  type: jekyll-archives
-  path: /categories/
-tag_archive:
-  type: jekyll-archives
-  path: /tags/
-jekyll-archives:
-  enabled:
-    - categories
-    - tags
-    - year
-    - month
-  layouts:
-    category: archive-taxonomy
-    tag: archive-taxonomy
-    year: archive-taxonomy
-    month: archive-taxonomy
-  permalinks:
-    year: '/:year/'
-    month: '/:year/:month/'
-    category: /categories/:name/
-    tag: /tags/:name/
-
-# Enhanced Defaults
+# Defaults
 defaults:
   # _posts
   - scope:
@@ -150,10 +106,11 @@ defaults:
       toc: true
       toc_sticky: true
       show_date: true
-      classes: wide
       header:
         overlay_filter: 0.5
         show_overlay_excerpt: true
+      sidebar:
+        nav: "recent-posts"
   # _pages
   - scope:
       path: "_pages"
@@ -162,16 +119,56 @@ defaults:
       layout: single
       author_profile: true
       classes: wide
-  # _portfolio
+  # _projects
   - scope:
-      path: "_portfolio"
-      type: portfolio
+      path: "_projects"
+      type: projects
     values:
       layout: single
       author_profile: false
       share: true
+      related: true
+      sidebar:
+        nav: "projects"
+  # _skills
+  - scope:
+      path: "_skills"
+      type: skills
+    values:
+      layout: single
+      classes: wide
+      author_profile: false
+      share: false
 
-# Additional Plugin Configuration
+# Comments
+comments:
+  provider: "giscus"
+  giscus:
+    repo_id: # your repo ID
+    category_name: "Comments"
+    category_id: # your category ID
+    discussion_term: "pathname"
+    reactions_enabled: 1
+    theme: "dark_dimmed"
+
+# Analytics
+analytics:
+  provider: "google-gtag"
+  google:
+    tracking_id: # your tracking ID
+    anonymize_ip: true
+
+# SEO Settings
+twitter:
+  username: # your Twitter username
+social:
+  type: Person
+  name: "Min Myat Oo"
+  links:
+    - "https://github.com/minmyatoo"
+    - "https://linkedin.com/in/yourusername"
+
+# Plugin Settings
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
@@ -179,20 +176,25 @@ plugins:
   - jekyll-feed
   - jemoji
   - jekyll-include-cache
-  - jekyll-archives
   - jekyll-seo-tag
-  - jekyll-redirect-from
+  - jekyll-archives
 
-# Pagination Enhancement
-paginate: 7
+# Archive Settings
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
+
+# Pagination
+paginate: 9
 paginate_path: /page:num/
 
-# Performance Settings
+# Optimization
 sass:
   style: compressed
 compress_html:
   clippings: all
-  comments: all
-  endings: all
-  blanklines: false
-  profile: false
+  ignore:
+    envs: development
