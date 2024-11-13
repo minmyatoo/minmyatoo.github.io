@@ -1,7 +1,8 @@
+# Site Settings
 title: Min Myat Oo
 subtitle: My Personal Blog
 name: Min Myat Oo
-description: >- # this means to ignore newlines until "baseurl:"
+description: >- 
   Software Engineer specializing in NetSuite development, ERP systems,
   and enterprise solutions. Sharing insights on software architecture,
   cloud computing, and business automation.
@@ -9,40 +10,107 @@ baseurl: ""
 url: "https://minmyatoo.github.io"
 repository: minmyatoo/minmyatoo.github.io
 locale: "en-US"
+logo: "/assets/images/logo.png"  # Add a custom logo
+og_image: "/assets/images/site-logo.png"  # Open Graph default image
 
-# Build settings
+# Theme Settings
 remote_theme: "mmistakes/minimal-mistakes@4.24.0"
 minimal_mistakes_skin: "dark"
+search: true
+search_full_content: true
+search_provider: lunr
+lunr:
+  search_within_pages: true
 
-# Site Author
+# Enhanced Site Author
 author:
   name: "Min Myat Oo"
-  avatar: "/assets/images/bio-photo.jpg" 
-  bio: "NetSuite Specialist"
+  avatar: "/assets/images/bio-photo.jpg"
+  bio: "NetSuite Specialist | Cloud Solutions Architect"
   location: "Singapore"
+  email: # Add your email if you want to display it
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/minmyatoo"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: # Add your LinkedIn URL
+    - label: "Stack Overflow"
+      icon: "fab fa-fw fa-stack-overflow"
+      url: # Add your Stack Overflow URL
 
-# Site Footer
+# Site Footer Enhancement
 footer:
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/minmyatoo"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: # Add your LinkedIn URL
+  copyright: "© 2024 Min Myat Oo. Powered by [Jekyll](https://jekyllrb.com) & [Minimal Mistakes](https://mademistakes.com/work/minimal-mistakes-jekyll-theme/)."
 
-# Plugins
-plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-feed
-  - jemoji
-  - jekyll-include-cache
-  - jekyll-archives
+# Enhanced Navigation
+main:
+  - title: "Home"
+    url: /
+  - title: "About"
+    url: /about/
+  - title: "Blog"
+    url: /posts/
+  - title: "Categories"
+    url: /categories/
+  - title: "Tags"
+    url: /tags/
+  - title: "Portfolio"
+    url: /portfolio/
+  - title: "Contact"
+    url: /contact/
 
-# Archives
+# UI Enhancements
+atom_feed:
+  path: # blank to disable feed icon
+  hide: true  # Completely hide the feed icon
+
+# Reading Experience
+reading_time: true
+words_per_minute: 200
+post_pagination: true
+related: true
+
+# Comments System
+comments:
+  provider: "disqus"
+  disqus:
+    shortname: # Add your disqus shortname
+
+# Analytics Enhancement
+analytics:
+  provider: "google-gtag"
+  google:
+    tracking_id: # Add your Google Analytics tracking ID
+    anonymize_ip: true
+
+# Social Sharing
+social_share: true
+social_platforms:
+  twitter: true
+  facebook: true
+  linkedin: true
+  reddit: true
+
+# SEO Enhancements
+twitter:
+  username: # Add your Twitter username
+social:
+  type: Person
+  name: "Min Myat Oo"
+  links:
+    - "https://github.com/minmyatoo"
+    # Add other social profile links
+
+# Archive Settings
 category_archive:
   type: jekyll-archives
   path: /categories/
@@ -53,14 +121,20 @@ jekyll-archives:
   enabled:
     - categories
     - tags
+    - year
+    - month
   layouts:
     category: archive-taxonomy
     tag: archive-taxonomy
+    year: archive-taxonomy
+    month: archive-taxonomy
   permalinks:
+    year: '/:year/'
+    month: '/:year/:month/'
     category: /categories/:name/
     tag: /tags/:name/
 
-# Defaults
+# Enhanced Defaults
 defaults:
   # _posts
   - scope:
@@ -76,6 +150,10 @@ defaults:
       toc: true
       toc_sticky: true
       show_date: true
+      classes: wide
+      header:
+        overlay_filter: 0.5
+        show_overlay_excerpt: true
   # _pages
   - scope:
       path: "_pages"
@@ -83,46 +161,38 @@ defaults:
     values:
       layout: single
       author_profile: true
+      classes: wide
+  # _portfolio
+  - scope:
+      path: "_portfolio"
+      type: portfolio
+    values:
+      layout: single
+      author_profile: false
+      share: true
 
-# Important: Replace navigation with these settings
-include: ["_pages"]
-atom_feed:
-  path: # blank to disable feed icon
+# Additional Plugin Configuration
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jemoji
+  - jekyll-include-cache
+  - jekyll-archives
+  - jekyll-seo-tag
+  - jekyll-redirect-from
 
-# Top Navigation
-masthead_title: # leave empty for default site title
-search: true
-breadcrumbs: false
-
-# Main Navigation Menu
-minimal_mistakes_skin: "dark"
-search: true
-search_full_content: true
-search_provider: lunr
-
-# Define the main navigation menu
-header:
-  overlay_color: "#000"
-  overlay_filter: "0.5"
-
-# This is the correct way to define the main menu in minimal mistakes
-main:
-  - title: "About"
-    url: /about/
-  - title: "Posts"
-    url: /posts/
-  - title: "Categories"
-    url: /categories/
-  - title: "Tags"
-    url: /tags/
-
-# Pagination
+# Pagination Enhancement
 paginate: 7
 paginate_path: /page:num/
 
-# Analytics (optional)
-# analytics:
-#   provider: "google-gtag"
-#   google:
-#     tracking_id: "UA-XXXXXXXXX-X"
-#     anonymize_ip: false
+# Performance Settings
+sass:
+  style: compressed
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  blanklines: false
+  profile: false
