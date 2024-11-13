@@ -1,5 +1,5 @@
 ---
-title: "SuiteScript Development - အခြေခံမှ အဆင့်မြင့်နည်းပညာများအထိ အသေးစိတ်လေ့လာခြင်း"
+title: "SuiteScript Development - အခြေခံမှ အဆင့်မြင့်နည်းပညာများအထိ"
 date: 2024-11-13
 author: "Tech Expert"
 categories:
@@ -15,7 +15,6 @@ tags:
 toc: true
 excerpt: "SuiteScript 2.0 နည်းပညာအား အခြေခံမှစ၍ အဆင့်မြင့်နည်းပညာများအထိ အသေးစိတ်လေ့လာခြင်း"
 ---
-
 # SuiteScript Development အခြေခံမှ အဆင့်မြင့်အထိ
 
 ## မာတိကာ
@@ -39,14 +38,13 @@ SuiteScript သည် NetSuite platform အတွက် JavaScript-based program
    - ES6+ features များ support လုပ်ခြင်း
    - Modules system ပါဝင်ခြင်း
    - Promise-based operations များ
-
 2. **Type Safety**
 
    - JSDoc annotations
    - Type checking
    - Code completion support
-
 3. **Performance Improvements**
+
    - Better memory management
    - Optimized execution
    - Improved error handling

@@ -1,5 +1,5 @@
 ---
-title: "NetSuite ERP နဲ့ SuiteScript အကြောင်း အသေးစိတ်လေ့လာခြင်း - Developer လမ်းကြောင်း အပြည့်အစုံ"
+title: "NetSuite ERP နဲ့ SuiteScript အကြောင်း အသေးစိတ်လေ့လာခြင်း"
 date: 2024-11-12
 author: "Tech Explorer"
 categories:
