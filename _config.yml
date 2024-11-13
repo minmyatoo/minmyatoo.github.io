@@ -1,91 +1,64 @@
-# Site Settings
 title: Min Myat Oo
-subtitle: "Software Engineering & Cloud Solutions"
+subtitle: My Personal Blog
 name: Min Myat Oo
-description: >- 
-  Experienced Software Engineer specializing in NetSuite development,
-  cloud architecture, and enterprise solutions. Sharing insights on
-  modern development practices and business automation.
+description: >- # this means to ignore newlines until "baseurl:"
+  Software Engineer specializing in NetSuite development, ERP systems,
+  and enterprise solutions. Sharing insights on software architecture,
+  cloud computing, and business automation.
+baseurl: "" 
+url: "https://minmyatoo.github.io"
+repository: minmyatoo/minmyatoo.github.io
 locale: "en-US"
-masthead_title: "Min Myat Oo"
 
-# Theme Settings
+# Build settings
 remote_theme: "mmistakes/minimal-mistakes@4.24.0"
-minimal_mistakes_skin: "mint"
-breadcrumbs: true
-words_per_minute: 200
-search: true
-search_full_content: true
-search_provider: lunr
-lunr:
-  search_within_pages: true
+minimal_mistakes_skin: "dark"
 
-# Layout Settings
-excerpt_separator: "<!--more-->"
-classes:
-  - wide
-  - dark-theme
-
-# Author Settings
+# Site Author
 author:
   name: "Min Myat Oo"
-  avatar: "/assets/images/profile.jpg"
-  bio: |
-    🚀 NetSuite Solutions Architect
-    💻 Full Stack Developer
-    ☁️ Cloud Architecture Specialist
+  avatar: "/assets/images/bio-photo.jpg" 
+  bio: "NetSuite Specialist"
   location: "Singapore"
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/minmyatoo"
-    - label: "LinkedIn"
-      icon: "fab fa-fw fa-linkedin"
-      url: "#"
-    - label: "Stack Overflow"
-      icon: "fab fa-fw fa-stack-overflow"
-      url: "#"
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope"
-      url: "mailto:your.email@domain.com"
 
-# Navigation
-main:
-  - title: "About"
-    url: /about/
-    description: "Learn more about my journey and expertise"
-  - title: "Blog"
-    url: /posts/
-    description: "Technical articles and insights"
-  - title: "Projects"
-    url: /projects/
-    description: "Featured work and case studies"
-  - title: "Skills"
-    url: /skills/
-    description: "Technical expertise and capabilities"
-  - title: "Contact"
-    url: /contact/
-    description: "Get in touch"
-
-# Footer Configuration
+# Site Footer
 footer:
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/minmyatoo"
-    - label: "LinkedIn"
-      icon: "fab fa-fw fa-linkedin"
-      url: "#"
-  copyright: "© 2024 Min Myat Oo · Built with Jekyll & ❤️"
 
-# Collections
-collections:
-  projects:
-    output: true
-    permalink: /:collection/:path/
-  skills:
-    output: true
-    permalink: /:collection/:path/
+# Plugins
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jemoji
+  - jekyll-include-cache
+  - jekyll-archives
+
+# Archives
+category_archive:
+  type: jekyll-archives
+  path: /categories/
+tag_archive:
+  type: jekyll-archives
+  path: /tags/
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+  layouts:
+    category: archive-taxonomy
+    tag: archive-taxonomy
+  permalinks:
+    category: /categories/:name/
+    tag: /tags/:name/
 
 # Defaults
 defaults:
@@ -103,11 +76,6 @@ defaults:
       toc: true
       toc_sticky: true
       show_date: true
-      header:
-        overlay_filter: 0.5
-        show_overlay_excerpt: true
-      sidebar:
-        nav: "recent-posts"
   # _pages
   - scope:
       path: "_pages"
@@ -115,83 +83,46 @@ defaults:
     values:
       layout: single
       author_profile: true
-      classes: wide
-  # _projects
-  - scope:
-      path: "_projects"
-      type: projects
-    values:
-      layout: single
-      author_profile: false
-      share: true
-      related: true
-      sidebar:
-        nav: "projects"
-  # _skills
-  - scope:
-      path: "_skills"
-      type: skills
-    values:
-      layout: single
-      classes: wide
-      author_profile: false
-      share: false
 
-# Comments
-comments:
-  provider: "giscus"
-  giscus:
-    repo_id: # your repo ID
-    category_name: "Comments"
-    category_id: # your category ID
-    discussion_term: "pathname"
-    reactions_enabled: 1
-    theme: "dark_dimmed"
+# Important: Replace navigation with these settings
+include: ["_pages"]
+atom_feed:
+  path: # blank to disable feed icon
 
-# Analytics
-analytics:
-  provider: "google-gtag"
-  google:
-    tracking_id: # your tracking ID
-    anonymize_ip: true
+# Top Navigation
+masthead_title: # leave empty for default site title
+search: true
+breadcrumbs: false
 
-# SEO Settings
-twitter:
-  username: # your Twitter username
-social:
-  type: Person
-  name: "Min Myat Oo"
-  links:
-    - "https://github.com/minmyatoo"
-    - "https://linkedin.com/in/minmyatoo"
+# Main Navigation Menu
+minimal_mistakes_skin: "mint"
+search: true
+search_full_content: true
+search_provider: lunr
 
-# Plugin Settings
-plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-feed
-  - jemoji
-  - jekyll-include-cache
-  - jekyll-seo-tag
-  - jekyll-archives
+# Define the main navigation menu
+header:
+  overlay_color: "#000"
+  overlay_filter: "0.5"
 
-# Archive Settings
-category_archive:
-  type: liquid
-  path: /categories/
-tag_archive:
-  type: liquid
-  path: /tags/
+# This is the correct way to define the main menu in minimal mistakes
+main:
+  - title: "About"
+    url: /about/
+  - title: "Posts"
+    url: /posts/
+  - title: "Categories"
+    url: /categories/
+  - title: "Tags"
+    url: /tags/
 
 # Pagination
-paginate: 9
+paginate: 7
 paginate_path: /page:num/
 
-# Optimization
-sass:
-  style: compressed
-compress_html:
-  clippings: all
-  ignore:
-    envs: development
+# Analytics (optional)
+# analytics:
+#   provider: "google-gtag"
+#   google:
+#     tracking_id: "UA-XXXXXXXXX-X"
+#     anonymize_ip: false
