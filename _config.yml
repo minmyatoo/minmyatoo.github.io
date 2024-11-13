@@ -21,7 +21,6 @@ lunr:
   search_within_pages: true
 
 # Layout Settings
-teaser: /assets/images/default-teaser.jpg
 excerpt_separator: "<!--more-->"
 classes:
   - wide
@@ -137,9 +136,6 @@ defaults:
       classes: wide
       author_profile: false
       share: false
-assets:
-  css:
-    - /assets/css/main.scss
 
 # Comments
 comments:
