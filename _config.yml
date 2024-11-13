@@ -1,200 +1,197 @@
-# Site Settings
-title: Min Myat Oo
-subtitle: "Software Engineering & Cloud Solutions"
-name: Min Myat Oo
-description: >- 
-  Experienced Software Engineer specializing in NetSuite development,
-  cloud architecture, and enterprise solutions. Sharing insights on
-  modern development practices and business automation.
-locale: "en-US"
-logo: "/assets/images/logo.png"
-og_image: "/assets/images/site-banner.png"
-masthead_title: "Min Myat Oo"
+# The Site Configuration
 
-# Theme Settings
-remote_theme: "mmistakes/minimal-mistakes@4.24.0"
-minimal_mistakes_skin: "dark"
-breadcrumbs: true
-words_per_minute: 200
-search: true
-search_full_content: true
-search_provider: lunr
-lunr:
-  search_within_pages: true
+# Import the theme
+theme: jekyll-theme-chirpy
 
-# Layout Settings
-teaser: /assets/images/default-teaser.jpg
-excerpt_separator: "<!--more-->"
-classes:
-  - wide
-  - dark-theme
+# Change the following value to '/PROJECT_NAME' ONLY IF your site type is GitHub Pages Project sites
+# and doesn't have a custom domain.
+baseurl: ''
 
-# Author Settings
-author:
-  name: "Min Myat Oo"
-  avatar: "/assets/images/profile.jpg"
-  bio: |
-    🚀 NetSuite Solutions Architect
-    💻 Full Stack Developer
-    ☁️ Cloud Architecture Specialist
-  location: "Singapore"
+# The language of the webpage › http://www.lingoes.net/en/translator/langcode.htm
+# If it has the same name as one of the files in folder `_data/locales`, the layout language will also be changed,
+# otherwise, the layout language will use the default value of 'en'.
+lang: en
+
+# Change to your timezone › https://kevinnovak.github.io/Time-Zone-Picker
+timezone: Asia/Singapore
+
+# jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
+# ↓ --------------------------
+
+title: Min Myat Oo                         # the main title
+tagline: Software Engineering & Cloud Solutions   # it will display as the sub-title
+description: >-                        # used by seo meta and the atom feed
+  A technical blog focusing on NetSuite development, cloud architecture,
+  and enterprise solutions. Sharing insights on modern development practices
+  and business automation.
+
+# Fill in the protocol & hostname for your site.
+# e.g. 'https://username.github.io', note that it does not end with a '/'.
+url: 'https://minmyatoo.github.io'
+
+github:
+  username: minmyatoo             # change to your github username
+
+twitter:
+  username: # change to your twitter username
+
+social:
+  # Change to your full name.
+  name: Min Myat Oo
+  email: your.email@example.com             # change to your email address
   links:
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/minmyatoo"
-    - label: "LinkedIn"
-      icon: "fab fa-fw fa-linkedin"
-      url: "#"
-    - label: "Stack Overflow"
-      icon: "fab fa-fw fa-stack-overflow"
-      url: "#"
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope"
-      url: "mailto:your.email@domain.com"
+    # The first element serves as the copyright owner's link
+    - https://github.com/minmyatoo       # change to your github homepage
+    - https://twitter.com/username      # change to your twitter homepage
+    # Uncomment below to add more social links
+    # - https://www.facebook.com/username
+    - https://www.linkedin.com/in/username
 
-# Navigation
-main:
-  - title: "About"
-    url: /about/
-    description: "Learn more about my journey and expertise"
-  - title: "Blog"
-    url: /posts/
-    description: "Technical articles and insights"
-  - title: "Projects"
-    url: /projects/
-    description: "Featured work and case studies"
-  - title: "Skills"
-    url: /skills/
-    description: "Technical expertise and capabilities"
-  - title: "Contact"
-    url: /contact/
-    description: "Get in touch"
+google_site_verification: # fill in to your verification string
 
-# Footer Configuration
-footer:
-  links:
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/minmyatoo"
-    - label: "LinkedIn"
-      icon: "fab fa-fw fa-linkedin"
-      url: "#"
-  copyright: "© 2024 Min Myat Oo · Built with Jekyll & ❤️"
+# ↑ --------------------------
+# The end of `jekyll-seo-tag` settings
 
-# Collections
+google_analytics:
+  id: # fill in your Google Analytics ID
+
+# Prefer color scheme setting.
+#
+# Note: Keep empty will follow the system prefer color by default,
+# and there will be a toggle to switch the theme between dark and light
+# on the bottom left of the sidebar.
+#
+# Available options:
+#
+#     light  - Use the light color scheme
+#     dark   - Use the dark color scheme
+#
+theme_mode: dark
+
+# The CDN endpoint for images.
+# Notice that once it is assigned, the CDN url
+# will be added to all image (site avatar & posts' images) paths starting with '/'
+#
+# e.g. 'https://cdn.com'
+img_cdn:
+
+# the avatar on sidebar, support local or CORS resources
+avatar: '/assets/img/avatar.jpg'
+
+# boolean type, the global switch for TOC in posts.
+toc: true
+
+comments:
+  active: giscus        # The global switch for posts comments, e.g., 'disqus'.  Keep it empty means disable
+  # The active options are as follows:
+  disqus:
+    shortname: # fill in the Disqus shortname. › https://help.disqus.com/en/articles/1717111-what-s-a-shortname
+  # utterances settings › https://utteranc.es/
+  utterances:
+    repo: # <gh-username>/<repo>
+    issue_term: # < url | pathname | title | ...>
+  # Giscus options › https://giscus.app
+  giscus:
+    repo: # <gh-username>/<repo>
+    repo_id:
+    category:
+    category_id:
+    mapping: # optional, default to 'pathname'
+    input_position: # optional, default to 'bottom'
+    lang: # optional, default to the value of `site.lang`
+    reactions_enabled: # optional, default to the value of `1`
+
+# Self-hosted static assets, optional › https://github.com/cotes2020/chirpy-static-assets
+assets:
+  self_host:
+    enabled: # boolean, keep empty means false
+    # specify the Jekyll environment, empty means both
+    # only works if `assets.self_host.enabled` is 'true'
+    env: # [development|production]
+
+pwa:
+  enabled: true   # the option for PWA feature
+
+paginate: 10
+
+# The base URL of your site
+baseurl: ""
+
+# ------------ The following options are not recommended to be modified ------------------
+
+kramdown:
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:   # Rouge Options › https://github.com/jneen/rouge#full-options
+    css_class: highlight
+    # default_lang: console
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
+
 collections:
-  projects:
+  tabs:
     output: true
-    permalink: /:collection/:path/
-  skills:
-    output: true
-    permalink: /:collection/:path/
+    sort_by: order
 
-# Defaults
 defaults:
-  # _posts
   - scope:
-      path: ""
+      path: ''          # An empty string here means all files in the project
       type: posts
     values:
-      layout: single
-      author_profile: true
-      read_time: true
-      comments: true
-      share: true
-      related: true
-      toc: true
-      toc_sticky: true
-      show_date: true
-      header:
-        overlay_filter: 0.5
-        show_overlay_excerpt: true
-      sidebar:
-        nav: "recent-posts"
-  # _pages
+      layout: post
+      comments: true    # Enable comments in posts.
+      toc: true         # Display TOC column in posts.
+      # DO NOT modify the following parameter unless you are confident enough
+      # to update the code of all other post links in this project.
+      permalink: /posts/:title/
   - scope:
-      path: "_pages"
-      type: pages
+      path: _drafts
     values:
-      layout: single
-      author_profile: true
-      classes: wide
-  # _projects
+      comments: false
   - scope:
-      path: "_projects"
-      type: projects
+      path: ''
+      type: tabs             # see `site.collections`
     values:
-      layout: single
-      author_profile: false
-      share: true
-      related: true
-      sidebar:
-        nav: "projects"
-  # _skills
+      layout: page
+      permalink: /:title/
   - scope:
-      path: "_skills"
-      type: skills
+      path: assets/img/favicons
     values:
-      layout: single
-      classes: wide
-      author_profile: false
-      share: false
+      swcache: true
+  - scope:
+      path: assets/js/dist
+    values:
+      swcache: true
 
-# Comments
-comments:
-  provider: "giscus"
-  giscus:
-    repo_id: # your repo ID
-    category_name: "Comments"
-    category_id: # your category ID
-    discussion_term: "pathname"
-    reactions_enabled: 1
-    theme: "dark_dimmed"
-
-# Analytics
-analytics:
-  provider: "google-gtag"
-  google:
-    tracking_id: # your tracking ID
-    anonymize_ip: true
-
-# SEO Settings
-twitter:
-  username: # your Twitter username
-social:
-  type: Person
-  name: "Min Myat Oo"
-  links:
-    - "https://github.com/minmyatoo"
-    - "https://linkedin.com/in/yourusername"
-
-# Plugin Settings
-plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-feed
-  - jemoji
-  - jekyll-include-cache
-  - jekyll-seo-tag
-  - jekyll-archives
-
-# Archive Settings
-category_archive:
-  type: liquid
-  path: /categories/
-tag_archive:
-  type: liquid
-  path: /tags/
-
-# Pagination
-paginate: 9
-paginate_path: /page:num/
-
-# Optimization
 sass:
   style: compressed
+
 compress_html:
   clippings: all
+  comments: all
+  endings: all
+  profile: false
+  blanklines: false
   ignore:
-    envs: development
+    envs: [development]
+
+exclude:
+  - '*.gem'
+  - '*.gemspec'
+  - docs
+  - tools
+  - README.md
+  - LICENSE
+  - rollup.config.js
+  - package*.json
+
+jekyll-archives:
+  enabled: [categories, tags]
+  layouts:
+    category: category
+    tag: tag
+  permalinks:
+    tag: /tags/:name/
+    category: /categories/:name/
