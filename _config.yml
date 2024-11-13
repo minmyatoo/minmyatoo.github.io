@@ -137,6 +137,9 @@ defaults:
       classes: wide
       author_profile: false
       share: false
+assets:
+  css:
+    - /assets/css/main.scss
 
 # Comments
 comments:
